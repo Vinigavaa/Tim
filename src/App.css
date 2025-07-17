@@ -1,0 +1,332 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Otimização específica para mobile - HeroSection mais compacto */
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  /* Reduzir espaçamento interno no mobile */
+  #hero h1 {
+    line-height: 1.1;
+  }
+  
+  #hero p {
+    line-height: 1.5;
+  }
+}
+
+/* Animação flutuante suave para o título */
+.animate-float-gentle {
+  animation: float-gentle 8s ease-in-out infinite;
+  will-change: transform;
+  animation-fill-mode: both;
+  animation-play-state: running;
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) translateZ(0);
+  }
+  50% {
+    transform: translateY(-2px) translateZ(0);
+  }
+}
+
+/* Garantir que a animação seja visível em todos os dispositivos */
+@media (max-width: 768px) {
+  .animate-float-gentle {
+    animation: float-gentle-mobile 8s ease-in-out infinite;
+  }
+  
+  @keyframes float-gentle-mobile {
+    0%, 100% {
+      transform: translateY(0px) translateZ(0);
+    }
+    50% {
+      transform: translateY(-1px) translateZ(0);
+    }
+  }
+}
+
+/* Garantir que a animação não seja sobrescrita */
+h1.animate-float-gentle,
+.floating-title {
+  animation: float-gentle 8s ease-in-out infinite !important;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@media (max-width: 768px) {
+  h1.animate-float-gentle,
+  .floating-title {
+    animation: float-gentle-mobile 8s ease-in-out infinite !important;
+  }
+}
+
+/* Força a animação para o título específico */
+#hero-title.floating-title {
+  animation: float-gentle 8s ease-in-out infinite !important;
+  transform: translateZ(0); /* Força aceleração de hardware */
+}
+
+@media (max-width: 768px) {
+  #hero-title.floating-title {
+    animation: float-gentle-mobile 8s ease-in-out infinite !important;
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Efeito de brilho para a linha separadora */
+.glow-red-subtle {
+  box-shadow: 0 0 8px 1px rgba(239, 68, 68, 0.6);
+}
+
+/* Efeito de pulsação para a linha separadora */
+@keyframes pulse-separator {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.pulse-separator {
+  animation: pulse-separator 3s infinite ease-in-out;
+}
+
+/* Animação de fade-in para notificações */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Otimizações de performance */
+.glass-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.glass-card:hover {
+  will-change: transform;
+}
+
+/* Reduzir motion para usuários que preferem menos animações */
+@media (prefers-reduced-motion: reduce) {
+  /* Apenas desabilita animações específicas, mantém transições básicas */
+  .animate-float-gentle,
+  .animate-pulse-glow,
+  .pulse-separator,
+  .animate-fade-in,
+  .animate-scale-in,
+  .animate-slide-up {
+    animation: none !important;
+  }
+  
+  /* Mantém transições básicas de hover mais rápidas */
+  * {
+    transition-duration: 0.1s !important;
+  }
+}
+
+/* Estilos para o formulário de leads */
+#lead-capture {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  #lead-capture {
+    padding: 2rem 0;
+  }
+}
+
+/* Estilização do formulário responsivo */
+.lead-form-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Estilos específicos para o formulário seguindo o padrão do site */
+.lead-form-container .glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.lead-form-container input,
+.lead-form-container select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.lead-form-container input:focus,
+.lead-form-container select:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+  outline: none;
+}
+
+.lead-form-container input::placeholder {
+  color: rgba(156, 163, 175, 0.8);
+}
+
+/* Estilo para campos com erro */
+.lead-form-container .border-red-500 {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+@media (max-width: 640px) {
+  .lead-form-container {
+    padding: 1rem;
+  }
+  
+  /* Aumentar tamanho dos campos em mobile para melhor usabilidade */
+  .lead-form-container input,
+  .lead-form-container select,
+  .lead-form-container button {
+    min-height: 48px;
+    font-size: 16px; /* Evita zoom no iOS */
+  }
+  
+  /* Melhorar espaçamento entre campos */
+  .lead-form-container .space-y-6 > * + * {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Animação de sucesso para o formulário */
+.form-success-animation {
+  animation: success-bounce 0.6s ease-out;
+}
+
+@keyframes success-bounce {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Estilo para o toast de notificação */
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+}
+
+@media (max-width: 640px) {
+  .toast-container {
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+  }
+}
+
+/* Remover estilos antigos que não são mais necessários */
+.lead-form-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Estilo para o botão de envio */
+.lead-form-container button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+}
+
+.lead-form-container button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Foco melhorado para acessibilidade */
+.lead-form-container input:focus,
+.lead-form-container select:focus,
+.lead-form-container button:focus {
+  outline: 2px solid #ef4444;
+  outline-offset: 2px;
+}
