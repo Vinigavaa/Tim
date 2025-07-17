@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { Navbar } from './components/ui/navbar';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
-import { Footer } from './components/ui/footer';
 import { useEffect } from 'react';
 
 function App() {

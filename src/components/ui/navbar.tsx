@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Button } from './button';
 import { Menu, X, Phone } from 'lucide-react';
-import { useIsMobile } from '../../hooks/use-mobile';
 import { createWhatsAppHandler, WHATSAPP_MESSAGES } from '../../lib/utils';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isMobile = useIsMobile();
+  const [isMobile, setIsMobile] = useState(false);
   
   // Lista de links da navegação
   const navLinks = [
@@ -18,14 +17,26 @@ export function Navbar() {
     { name: 'Contato', href: '#contact' },
   ];
 
-  // Detecta o scroll da página
+  // Detecta o scroll da página e tamanho da tela
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Verificação inicial
+    handleResize();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
   
   // Fecha o menu móvel quando um link é clicado
