@@ -18,10 +18,10 @@ const ServiceCard = ({ title, description, icon, whatsappMessage, imageSrc }: Se
   const createWhatsAppUrl = (message: string) => {
     try {
       const encodedMessage = encodeURIComponent(message);
-      return `https://wa.me/554896832076?text=${encodedMessage}`;
+      return `https://wa.me/5548998438888?text=${encodedMessage}`;
     } catch (err) {
       console.error('Erro ao codificar mensagem do WhatsApp:', err);
-      return `https://wa.me/554896832076`;
+      return `https://wa.me/5548998438888`;
     }
   };
 

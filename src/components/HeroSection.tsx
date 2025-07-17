@@ -11,31 +11,32 @@ export function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="min-h-[75vh] md:min-h-screen bg-white flex items-center justify-center relative overflow-hidden py-8 md:py-0 mb-[-10vh] mt-[10vh]"  
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-16 sm:py-20 md:py-0"
+      style={{ backgroundColor: '#ffffff' }}
     >
-      {/* Efeito de blur azul curvado principal */}
+      {/* Efeito de blur azul curvado principal - Otimizado para mobile */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Blur principal - curvado diagonal com cores personalizadas */}
+        {/* Blur principal - responsivo */}
         <div 
-          className="absolute top-1/2 left-1/2 w-[800px] h-[400px] rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2 rotate-12"
+          className="absolute top-1/2 left-1/2 w-[300px] h-[200px] sm:w-[500px] sm:h-[300px] lg:w-[800px] lg:h-[400px] rounded-full blur-2xl sm:blur-3xl transform -translate-x-1/2 -translate-y-1/2 rotate-12"
           style={{
             background: 'linear-gradient(135deg, rgba(0, 71, 148, 0.25) 0%, rgba(0, 71, 148, 0.15) 50%, rgba(235, 2, 45, 0.1) 100%)',
             clipPath: 'ellipse(70% 50% at 50% 50%)',
           }}
         />
         
-        {/* Blur secundário - menor e mais sutil */}
+        {/* Blur secundário - responsivo */}
         <div 
-          className="absolute top-1/3 right-1/4 w-[500px] h-[300px] rounded-full blur-2xl transform rotate-45"
+          className="absolute top-1/3 right-1/4 w-[200px] h-[150px] sm:w-[350px] sm:h-[200px] lg:w-[500px] lg:h-[300px] rounded-full blur-xl sm:blur-2xl transform rotate-45"
           style={{
             background: 'linear-gradient(45deg, rgba(0, 71, 148, 0.15) 0%, rgba(235, 2, 45, 0.08) 100%)',
             clipPath: 'ellipse(60% 40% at 30% 70%)',
           }}
         />
         
-        {/* Blur terciário - para dar profundidade */}
+        {/* Blur terciário - responsivo */}
         <div 
-          className="absolute bottom-1/4 left-1/4 w-[600px] h-[200px] rounded-full blur-2xl transform -rotate-12"
+          className="absolute bottom-1/4 left-1/4 w-[250px] h-[100px] sm:w-[400px] sm:h-[150px] lg:w-[600px] lg:h-[200px] rounded-full blur-xl sm:blur-2xl transform -rotate-12"
           style={{
             background: 'linear-gradient(225deg, rgba(0, 71, 148, 0.12) 0%, rgba(235, 2, 45, 0.05) 100%)',
             clipPath: 'ellipse(80% 30% at 70% 30%)',
@@ -43,14 +44,14 @@ export function HeroSection() {
         />
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[60vh]">
-          {/* Conteúdo alinhado à esquerda */}
-          <div className="max-w-2xl space-y-4 md:space-y-6 text-left">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Conteúdo alinhado à esquerda - Otimizado para mobile */}
+          <div className="w-full space-y-4 sm:space-y-6 text-left order-1 lg:order-1">
           
-          {/* Badge - com cores personalizadas */}
+          {/* Badge - responsivo */}
           <div 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium"
+            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium"
             style={{
               backgroundColor: 'rgba(235, 2, 45, 0.1)',
               border: '1px solid rgba(235, 2, 45, 0.2)',
@@ -58,15 +59,14 @@ export function HeroSection() {
             }}
           >
             <div 
-              className="w-2 h-2 rounded-full animate-pulse"
+              className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full animate-pulse"
               style={{ backgroundColor: '#eb022d' }}
             ></div>
             8 anos de atendimento
           </div>
           
-          {/* Main title */}
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] md:leading-tight text-gray-900">
-            TIM <br />
+          {/* Main title - Responsivo com tamanhos menores para mobile */}
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-blue-900">
             <span 
               className="bg-clip-text text-transparent"
               style={{
@@ -74,38 +74,38 @@ export function HeroSection() {
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text'
               }}
-            > Santa Luzia</span>
+            > TIM <br />Santa Luzia</span>
           </h1>
           
-          {/* Subtitle */}
-          <p className="text-base md:text-xl lg:text-2xl text-gray-600 max-w-xl leading-relaxed">
+          {/* Subtitle - Responsivo */}
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed max-w-full lg:max-w-xl">
             Há oito anos conectando as pessoas com bom atendimento e qualidade nos produtos.
           </p>
           
-          {/* CTA Buttons - com cores personalizadas */}
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+          {/* CTA Buttons - Melhor responsividade */}
+          <div className="flex flex-col gap-3 pt-4 sm:pt-6 w-full">
             <Button 
               size="lg"
-              onClick={handleStartNow}
-              className="text-white h-12 md:h-11 px-8 md:px-6 text-lg md:text-base font-semibold w-full sm:w-auto shadow-lg"
+              onClick={() => window.open('https://www.instagram.com/timsantaluzia?igsh=eXBmOWk3dmhqaTd1', '_blank')}
+              className="text-white h-12 sm:h-13 md:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold w-full shadow-lg"
               style={{
                 backgroundColor: '#004794',
                 boxShadow: '0 10px 25px rgba(0, 71, 148, 0.25)'
               }}
               onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#003366'}
               onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = '#004794'}
-              aria-label="Começar projeto via WhatsApp"
+              aria-label="Seguir no Instagram da TIM Santa Luzia"
             >
-              Começar agora
+              Conheça nosso Instagram
             </Button>
             
-            <Button 
-              variant="outline"
-              size="lg"
-              onClick={handleLearnMore}
-              className="h-12 md:h-11 px-8 md:px-6 text-lg md:text-base font-semibold w-full sm:w-auto"
+            {/* Botão secundário - Responsivo */}
+            <button
+              onClick={() => window.open('https://maps.app.goo.gl/eUmExMb9o21zyZhV6', '_blank')}
+              className="h-12 sm:h-13 md:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold w-full rounded-md transition-all duration-200 flex items-center justify-center"
               style={{
-                borderColor: 'rgba(235, 2, 45, 0.3)',
+                backgroundColor: 'transparent',
+                border: '1px solid rgba(235, 2, 45, 0.3)',
                 color: '#eb022d'
               }}
               onMouseEnter={(e) => {
@@ -119,15 +119,15 @@ export function HeroSection() {
               aria-label="Saber mais via Instagram"
             >
               <Play size={16} className="mr-2" />
-              Saiba mais
-            </Button>
+              Localização
+            </button>
           </div>
           
-          {/* Social proof */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-8 text-gray-500 text-sm pt-4 md:pt-4">
+          {/* Social proof - Responsivo */}
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-gray-500 text-xs sm:text-sm pt-4">
             <div className="flex items-center gap-2">
               <div 
-                className="w-1 h-1 rounded-full mr-1"
+                className="w-1 h-1 rounded-full"
                 style={{ backgroundColor: '#eb022d' }}
               ></div>
               <span>4.9/5 avaliação média</span>
@@ -136,13 +136,16 @@ export function HeroSection() {
           
         </div>
         
-        {/* Imagem do celular */}
-        <div className="hidden lg:flex items-center justify-center">
-          <img 
-            src="/celular.png" 
-            alt="Celular mostrando aplicativo de marketing digital" 
-            className="w-full max-w-md h-auto object-contain"
-          />
+        {/* Imagem do celular - Responsiva */}
+        <div className="flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0">
+          <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-md">
+            <img 
+              src="/celular.png" 
+              alt="Smartphone TIM com aplicativos e serviços" 
+              className="w-full h-auto object-contain"
+              loading="eager"
+            />
+          </div>
         </div>
         
       </div>

@@ -144,7 +144,7 @@ export function Navbar() {
             <div className="flex md:hidden items-center gap-2">
               <button
                 onClick={handlePhoneWhatsApp}
-                className="p-2 text-white hover:text-gray-200 transition-colors duration-200 rounded-md bg-white/10 hover:bg-white/20"
+                className="p-2 text-blue-500 hover:text-gray-200 transition-colors duration-200 rounded-md bg-white/10 hover:bg-white/20"
                 aria-label="Entrar em contato via WhatsApp"
               >
                 <Phone size={18} />
@@ -153,7 +153,7 @@ export function Navbar() {
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white hover:bg-white/20 transition-colors duration-200 bg-white/10"
+                className="text-blue-500 hover:bg-white/20 transition-colors duration-200 bg-white/10"
                 aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
               >
                 {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -170,7 +170,7 @@ export function Navbar() {
           onClick={handleOverlayClick}
         >
           {/* Background overlay */}
-          <div className="absolute inset-0 bg-transparent backdrop-blur-md" />
+          <div className="absolute inset-0 bg-blue-500 backdrop-blur-md" />
           
           {/* Menu content */}
           <div className="relative z-10 flex flex-col h-full pt-20 pb-6 px-4">

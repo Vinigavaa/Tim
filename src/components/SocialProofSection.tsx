@@ -8,23 +8,33 @@ interface TestimonialProps {
 }
 
 const Testimonial = ({ quote, author, position, rating }: TestimonialProps) => (
-  <div className="glass-card rounded-xl p-6 h-full flex flex-col justify-between">
+  <div 
+    className="rounded-xl p-6 h-full flex flex-col justify-between shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-sm"
+    style={{ backgroundColor: 'rgba(0, 71, 148, 0.15)' }}
+  >
     {/* Rating stars */}
     <div>
       <div className="flex space-x-1 mb-4">
         {Array.from({ length: rating }).map((_, i) => (
-          <Star key={i} className="h-4 w-4 text-red-500 fill-red-500" />
+          <Star 
+            key={i} 
+            className="h-5 w-5 fill-current"
+            style={{ color: '#eb022d' }}
+          />
         ))}
       </div>
       
       {/* Quote */}
-      <p className="text-gray-300 mb-6 leading-relaxed">"{quote}"</p>
+      <p className="text-blue-100 mb-6 leading-relaxed text-lg">"{quote}"</p>
     </div>
     
     {/* Author info */}
-    <div className="pt-4 border-t border-white/5">
-      <p className="font-semibold text-white">{author}</p>
-      <p className="text-sm text-gray-400">{position}</p>
+    <div 
+      className="pt-4 border-t"
+      style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}
+    >
+      <p className="font-semibold text-white text-lg">{author}</p>
+      <p className="text-sm text-blue-200">{position}</p>
     </div>
   </div>
 );
@@ -32,44 +42,91 @@ const Testimonial = ({ quote, author, position, rating }: TestimonialProps) => (
 export function SocialProofSection() {
   const testimonials = [
     {
-      quote: "A equipe da Prosperity Company revolucionou nossa estratégia digital. Em apenas 3 meses, triplicamos o tráfego e duplicamos as conversões no nosso site.",
-      author: "Carlos Silva",
-      position: "CEO, TechSolutions",
+      quote: "Única loja da TIM que me ajudou nas questões de planos e consegui recuperar meu número. Atendimento excelente!",
+      author: "Kethelyn Rabello",
+      position: "Cliente TIM",
       rating: 5
     },
     {
-      quote: "Excelente trabalho de SEO e marketing de conteúdo. Nossa visibilidade online melhorou drasticamente e agora estamos na primeira página para nossas principais palavras-chave.",
-      author: "Marina Oliveira",
-      position: "CMO, Grupo Inovação",
+      quote: "Loja excelente, melhor atendimento da região! Sempre resolvem meus problemas com rapidez e eficiência.",
+      author: "Érica Vitalli",
+      position: "Cliente TIM",
       rating: 5
     },
     {
-      quote: "A Prosperity Company entregou resultados que superaram nossas expectativas. A gestão das campanhas de anúncios trouxe um ROI impressionante e a comunicação foi sempre transparente.",
+      quote: "Comprei meu iPhone 14, excelente qualidade e atendimento, transparência e preço justo. Super recomendo!",
       author: "Gustavo Mendes",
-      position: "Diretor, E-commerce Express",
+      position: "Cliente TIM",
+      rating: 5
+    },
+    {
+      quote: "Assistência técnica perfeita! Quebraram a tela do meu celular e ficou como novo. Garantia respeitada.",
+      author: "Marina Silva",
+      position: "Cliente TIM",
+      rating: 5
+    },
+    {
+      quote: "8 anos sendo cliente e nunca me decepcionaram. Sempre com produtos novos e preços competitivos.",
+      author: "Roberto Santos",
+      position: "Cliente TIM",
+      rating: 5
+    },
+    {
+      quote: "Capa personalizada ficou incrível! Qualidade da impressão surpreendente e entrega rápida.",
+      author: "Ana Carolina",
+      position: "Cliente TIM",
       rating: 5
     }
   ];
 
   return (
-    <section id="testimonials" className="section-modern bg-uniform relative">
-      {/* Efeitos de blur vermelho decorativos */}
-      <div className="red-blur-1 top-12 right-24"></div>
-      <div className="red-blur-3 bottom-24 left-8"></div>
-      <div className="red-blur-2 top-1/3 left-1/3"></div>
+    <section 
+      id="testimonials" 
+      className="py-16 md:py-24 relative"
+      style={{ backgroundColor: '#004794' }}
+    >
+      {/* Efeitos de blur decorativos sutis */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div 
+          className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-10"
+          style={{ backgroundColor: '#eb022d' }}
+        />
+        <div 
+          className="absolute bottom-20 left-10 w-80 h-80 rounded-full blur-3xl opacity-10"
+          style={{ backgroundColor: '#eb022d' }}
+        />
+        <div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-8"
+          style={{ backgroundColor: '#eb022d' }}
+        />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
+        {/* Cabeçalho da seção */}
         <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 bg-red-500/10 text-red-400 text-sm font-medium rounded-full mb-4">
-            DEPOIMENTOS
+          <div 
+            className="inline-block px-4 py-2 text-sm font-medium rounded-full mb-6"
+            style={{
+              backgroundColor: 'rgba(235, 2, 45, 0.15)',
+              border: '1px solid rgba(235, 2, 45, 0.3)',
+              color: '#eb022d'
+            }}
+          >
+            ⭐ DEPOIMENTOS
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">O que dizem nossos clientes</h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Conheça as histórias de sucesso de empresas que transformaram sua presença digital com nossas soluções.
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
+            O que dizem nossos clientes
+          </h2>
+          
+          <p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            Mais de 8 anos cuidando das pessoas de Santa Luzia com qualidade, 
+            transparência e o melhor atendimento da região.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {/* Grid de depoimentos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <Testimonial
               key={index}
@@ -81,19 +138,43 @@ export function SocialProofSection() {
           ))}
         </div>
         
-        {/* Métricas */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 border-t border-white/5">
+        {/* Métricas da TIM Santa Luzia */}
+        <div 
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-16 border-t"
+          style={{ borderColor: 'rgba(255, 255, 255, 0.2)' }}
+        >
           {[
-            { value: "147%", label: "Crescimento médio" },
-            { value: "97%", label: "Taxa de renovação" },
-            { value: "+500", label: "Clientes atendidos" },
-            { value: "3x", label: "Retorno sobre investimento" }
+            { value: "8+", label: "Anos de experiência" },
+            { value: "4.9★", label: "Avaliação Google" },
+            { value: "1000+", label: "Clientes atendidos" },
+            { value: "90", label: "Dias de garantia" }
           ].map((metric, i) => (
             <div key={i} className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">{metric.value}</div>
-              <div className="text-sm text-gray-400">{metric.label}</div>
+              <div 
+                className="text-3xl md:text-4xl font-bold mb-2"
+                style={{
+                  background: 'linear-gradient(135deg, #ffffff 0%, #eb022d 50%, #ffffff 100%)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent'
+                }}
+              >
+                {metric.value}
+              </div>
+              <div className="text-sm md:text-base text-blue-200">{metric.label}</div>
             </div>
           ))}
+        </div>
+        
+        {/* Call-to-action final */}
+        <div className="text-center mt-16">
+          <p className="text-blue-100 mb-6 text-lg">
+            Faça parte da nossa família de clientes satisfeitos
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <span className="text-white font-semibold text-lg">📍 Santa Luzia - Criciuma -SC</span>
+            <span className="text-white font-semibold text-lg">📱 (48) 99843-8888 </span>
+          </div>
         </div>
       </div>
     </section>

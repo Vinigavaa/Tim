@@ -6,16 +6,18 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // Utilitários para WhatsApp
-export const WHATSAPP_PHONE = "554896832076";
+export const WHATSAPP_PHONE = "5548998438888";
 
 export const WHATSAPP_MESSAGES = {
-  CONTACT_GENERAL: "Olá! Gostaria de falar sobre os serviços da Prosperity Company. Podem me ajudar?",
-  START_NOW: "Olá! Quero começar um projeto de marketing digital agora mesmo. Podem me passar mais informações?",
-  LEARN_MORE: "Olá! Gostaria de saber mais sobre os serviços de marketing digital da Prosperity Company",
-  APPROACH: "Olá! Quero conhecer melhor a abordagem da Prosperity Company para marketing digital",
-  CONSULTATION: "Olá! Gostaria de agendar uma consultoria gratuita para meu negócio",
-  PHONE_CONTACT: "Olá! Vi o site da Prosperity Company e gostaria de conversar sobre marketing digital",
-  FOOTER_CONTACT: "Olá! Acessei o site da Prosperity Company e tenho interesse nos serviços de vocês"
+  CONTACT_GENERAL: "Olá! Gostaria de falar sobre os serviços da TIM Santa Luzia. Podem me ajudar?",
+  START_NOW: "Olá! Gostaria de falar sobre os serviços da TIM Santa Luzia. Podem me ajudar?",
+  LEARN_MORE: "Olá! Gostaria de falar sobre os serviços da TIM Santa Luzia. Podem me ajudar?",
+  APPROACH: "Olá! Quero conhecer melhor a abordagem da TIM Santa Luzia",
+  CONSULTATION: "Olá! Gostaria de falar sobre os serviços da TIM Santa Luzia. Podem me ajudar?",
+  PHONE_CONTACT: "Olá! Vi o site da TIM Santa Luiza!",
+  FOOTER_CONTACT: "Olá! Acessei o site da TIM e tenho interesse nos serviços de vocês",
+  REPAIR: "Olá! Preciso de assistência técnica para meu celular. Podem me ajudar?"
+
 } as const;
 
 /**
