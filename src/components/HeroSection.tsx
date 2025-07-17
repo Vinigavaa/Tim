@@ -101,7 +101,7 @@ export function HeroSection() {
             
             {/* Botão secundário - Responsivo */}
             <button
-              onClick={handleLearnMore}
+              onClick={() => window.open('https://maps.app.goo.gl/xm4ySteQD1mssbFW7', '_blank')}
               className="h-12 sm:h-13 md:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold w-full rounded-md transition-all duration-200 flex items-center justify-center"
               style={{
                 backgroundColor: 'transparent',
@@ -119,7 +119,7 @@ export function HeroSection() {
               aria-label="Saber mais via Instagram"
             >
               <Play size={16} className="mr-2" />
-              Saiba mais
+              Localização
             </button>
           </div>
           
