@@ -67,7 +67,6 @@ export function HeroSection() {
           
           {/* Main title - Responsivo com tamanhos menores para mobile */}
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900">
-            TIM <br />
             <span 
               className="bg-clip-text text-transparent"
               style={{
@@ -75,7 +74,7 @@ export function HeroSection() {
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text'
               }}
-            > Santa Luzia</span>
+            > TIM <br /> Santa Luzia</span>
           </h1>
           
           {/* Subtitle - Responsivo */}
@@ -97,7 +96,7 @@ export function HeroSection() {
               onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = '#004794'}
               aria-label="Seguir no Instagram da TIM Santa Luzia"
             >
-              📱 Conheça nosso Instagram
+              Conheça nosso Instagram
             </Button>
             
             {/* Botão secundário - Responsivo */}
