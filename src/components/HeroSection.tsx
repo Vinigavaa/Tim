@@ -11,7 +11,7 @@ export function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-16 sm:py-20 md:py-0"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20 sm:py-24 md:py-0 mt-16 sm:mt-20 md:mt-0"
       style={{ backgroundColor: '#ffffff' }}
     >
       {/* Efeito de blur azul curvado principal - Otimizado para mobile */}
@@ -66,7 +66,8 @@ export function HeroSection() {
           </div>
           
           {/* Main title - Responsivo com tamanhos menores para mobile */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-blue-900">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900">
+            TIM <br />
             <span 
               className="bg-clip-text text-transparent"
               style={{
@@ -74,7 +75,7 @@ export function HeroSection() {
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text'
               }}
-            > TIM <br />Santa Luzia</span>
+            > Santa Luzia</span>
           </h1>
           
           {/* Subtitle - Responsivo */}
@@ -96,12 +97,12 @@ export function HeroSection() {
               onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = '#004794'}
               aria-label="Seguir no Instagram da TIM Santa Luzia"
             >
-              Conheça nosso Instagram
+              📱 Conheça nosso Instagram
             </Button>
             
             {/* Botão secundário - Responsivo */}
             <button
-              onClick={() => window.open('https://maps.app.goo.gl/eUmExMb9o21zyZhV6', '_blank')}
+              onClick={handleLearnMore}
               className="h-12 sm:h-13 md:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold w-full rounded-md transition-all duration-200 flex items-center justify-center"
               style={{
                 backgroundColor: 'transparent',
@@ -119,7 +120,7 @@ export function HeroSection() {
               aria-label="Saber mais via Instagram"
             >
               <Play size={16} className="mr-2" />
-              Localização
+              Saiba mais
             </button>
           </div>
           
