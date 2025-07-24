@@ -2,9 +2,19 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Navbar } from './components/ui/navbar';
-import Index from './pages/Index';
-import NotFound from './pages/NotFound';
+import { Suspense, lazy } from 'react';
 import { useEffect } from 'react';
+
+// Lazy loading dos componentes
+const Index = lazy(() => import('./pages/Index'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
+// Componente de loading
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+  </div>
+);
 
 function App() {
   // Efeito para permitir navegação suave por âncoras
@@ -44,10 +54,12 @@ function App() {
       <div className="flex min-h-screen flex-col">
         <Navbar />
         <div className="flex-1">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </div>
       </div>
     </BrowserRouter>

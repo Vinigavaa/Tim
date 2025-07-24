@@ -1,155 +1,178 @@
 import { Button } from './ui/button';
-import { Play } from 'lucide-react';
+import { Play, Signal, Wifi, Smartphone, Star, Users, Clock } from 'lucide-react';
 import { createWhatsAppHandler, WHATSAPP_MESSAGES } from '../lib/utils';
+import { WavyBackground } from './ui/WavyBackground';
 
 export function HeroSection() {
   const handleStartNow = createWhatsAppHandler(WHATSAPP_MESSAGES.START_NOW);
-  const handleLearnMore = () => {
-    window.open('https://www.instagram.com/py_assessoria?igsh=MTcyenk1cDVtMGM1bg==', '_blank');
-  };
 
   return (
-    <section 
-      id="hero" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20 sm:py-24 md:py-0 mt-16 sm:mt-20 md:mt-0"
-      style={{ backgroundColor: '#ffffff' }}
+    <WavyBackground 
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      containerClassName="min-h-screen mt-16 sm:mt-20 md:mt-0"
+      colors={[
+        "#004794", // TIM Blue
+        "#0056a8", // TIM Blue variant
+        "#eb022d", // TIM Red
+        "#ff1744", // TIM Red variant
+        "#0066cc", // Tech Blue
+        "#004794", // Back to TIM Blue for continuity
+      ]}
+      waveWidth={60}
+      backgroundFill="rgba(255, 255, 255, 0.95)"
+      blur={3}
+      speed="slow"
+      waveOpacity={0.10}
     >
-      {/* Efeito de blur azul curvado principal - Otimizado para mobile */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Blur principal - responsivo */}
-        <div 
-          className="absolute top-1/2 left-1/2 w-[300px] h-[200px] sm:w-[500px] sm:h-[300px] lg:w-[800px] lg:h-[400px] rounded-full blur-2xl sm:blur-3xl transform -translate-x-1/2 -translate-y-1/2 rotate-12"
-          style={{
-            background: 'linear-gradient(135deg, rgba(0, 71, 148, 0.25) 0%, rgba(0, 71, 148, 0.15) 50%, rgba(235, 2, 45, 0.1) 100%)',
-            clipPath: 'ellipse(70% 50% at 50% 50%)',
-          }}
-        />
+      <div className="flex items-center justify-center min-h-screen py-20 relative z-10">
+        <div className="w-full max-w-4xl space-y-6 sm:space-y-8 text-center">
         
-        {/* Blur secundário - responsivo */}
-        <div 
-          className="absolute top-1/3 right-1/4 w-[200px] h-[150px] sm:w-[350px] sm:h-[200px] lg:w-[500px] lg:h-[300px] rounded-full blur-xl sm:blur-2xl transform rotate-45"
-          style={{
-            background: 'linear-gradient(45deg, rgba(0, 71, 148, 0.15) 0%, rgba(235, 2, 45, 0.08) 100%)',
-            clipPath: 'ellipse(60% 40% at 30% 70%)',
-          }}
-        />
-        
-        {/* Blur terciário - responsivo */}
-        <div 
-          className="absolute bottom-1/4 left-1/4 w-[250px] h-[100px] sm:w-[400px] sm:h-[150px] lg:w-[600px] lg:h-[200px] rounded-full blur-xl sm:blur-2xl transform -rotate-12"
-          style={{
-            background: 'linear-gradient(225deg, rgba(0, 71, 148, 0.12) 0%, rgba(235, 2, 45, 0.05) 100%)',
-            clipPath: 'ellipse(80% 30% at 70% 30%)',
-          }}
-        />
-      </div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Conteúdo alinhado à esquerda - Otimizado para mobile */}
-          <div className="w-full space-y-4 sm:space-y-6 text-left order-1 lg:order-1">
-          
-          {/* Badge - responsivo */}
-          <div 
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium"
-            style={{
-              backgroundColor: 'rgba(235, 2, 45, 0.1)',
-              border: '1px solid rgba(235, 2, 45, 0.2)',
-              color: '#eb022d'
-            }}
-          >
+          {/* Modern Badge with micro-interactions */}
+          <div className="flex justify-center">
             <div 
-              className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full animate-pulse"
-              style={{ backgroundColor: '#eb022d' }}
-            ></div>
-            8 anos de atendimento
+              className="group inline-flex items-center gap-3 px-4 py-2.5 sm:px-5 sm:py-3 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 cursor-default backdrop-blur-sm"
+              style={{
+                background: 'linear-gradient(135deg, rgba(235, 2, 45, 0.15) 0%, rgba(0, 71, 148, 0.12) 100%)',
+                border: '1px solid rgba(235, 2, 45, 0.3)',
+                color: '#eb022d',
+                boxShadow: '0 4px 15px rgba(235, 2, 45, 0.15)'
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <Clock size={16} className="animate-pulse" />
+                <span>8 anos de excelência</span>
+              </div>
+              <div 
+                className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full animate-pulse group-hover:animate-bounce"
+                style={{ backgroundColor: '#eb022d' }}
+              ></div>
+            </div>
           </div>
           
-          {/* Main title - Responsivo com tamanhos menores para mobile */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-gray-900">
+          {/* Hero Title with advanced typography */}
+          <div className="space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight tracking-tight">
+              <span 
+                className="block bg-clip-text text-transparent"
+                style={{
+                  background: `linear-gradient(135deg, #004794 0%, #eb022d 40%, #004794 80%, #eb022d 100%)`,
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  backgroundSize: '200% 200%',
+                  animation: 'gradient-shift 3s ease-in-out infinite'
+                }}
+              >
+                LOJA TIM
+              </span>
+              <span className="block text-gray-900 mt-2 drop-shadow-sm">
+                <span className="hidden sm:inline">Santa Luzia</span>
+                <span className="sm:hidden">Santa Luzia</span>
+              </span>
+            </h1>
+            
+            {/* Tech accent line */}
+            <div className="flex justify-center pt-4">
+              <div 
+                className="w-24 h-1 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, #004794 0%, #eb022d 50%, #004794 100%)',
+                  animation: 'pulse 2s ease-in-out infinite'
+                }}
+              ></div>
+            </div>
+          </div>
+          
+          {/* Enhanced Subtitle */}
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-black leading-relaxed max-w-3xl mx-auto font-medium">
+            Conectando o futuro com{' '}
             <span 
-              className="bg-clip-text text-transparent"
+              className="font-bold bg-clip-text text-transparent"
               style={{
-                background: `linear-gradient(135deg, #004794 0%, #eb022d 50%, #004794 100%)`,
+                background: 'linear-gradient(135deg, #004794 0%, #eb022d 100%)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text'
               }}
-            > TIM <br /> Santa Luzia</span>
-          </h1>
-          
-          {/* Subtitle - Responsivo */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-gray-600 leading-relaxed max-w-full lg:max-w-xl">
-            Há oito anos conectando as pessoas com bom atendimento e qualidade nos produtos.
+            >
+              tecnologia avançada
+            </span>{' '}
+            e atendimento excepcional há 8 anos.
           </p>
           
-          {/* CTA Buttons - Melhor responsividade */}
-          <div className="flex flex-col gap-3 pt-4 sm:pt-6 w-full">
+          {/* Modern CTA Section */}
+          <div className="space-y-4 pt-6 sm:pt-8 max-w-md mx-auto">
+            {/* Primary CTA */}
             <Button 
               size="lg"
               onClick={() => window.open('https://www.instagram.com/timsantaluzia?igsh=eXBmOWk3dmhqaTd1', '_blank')}
-              className="text-white h-12 sm:h-13 md:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold w-full shadow-lg"
+              className="group relative w-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border-0"
               style={{
-                backgroundColor: '#004794',
-                boxShadow: '0 10px 25px rgba(0, 71, 148, 0.25)'
+                background: 'linear-gradient(135deg, #004794 0%, #0056a8 50%, #004794 100%)',
+                backgroundSize: '200% 200%',
+                boxShadow: '0 10px 30px rgba(0, 71, 148, 0.4)'
               }}
-              onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#003366'}
-              onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = '#004794'}
-              aria-label="Seguir no Instagram da TIM Santa Luzia"
+              onMouseEnter={(e) => {
+                (e.target as HTMLElement).style.backgroundPosition = '100% 0';
+                (e.target as HTMLElement).style.boxShadow = '0 15px 40px rgba(0, 71, 148, 0.5)';
+              }}
+              onMouseLeave={(e) => {
+                (e.target as HTMLElement).style.backgroundPosition = '0% 0';
+                (e.target as HTMLElement).style.boxShadow = '0 10px 30px rgba(0, 71, 148, 0.4)';
+              }}
             >
-              Conheça nosso Instagram
+              <span className="relative z-10 flex items-center justify-center gap-3">
+                <Smartphone size={18} className="group-hover:rotate-12 transition-transform duration-300" />
+                Conheça nosso Instagram
+              </span>
+              {/* Hover effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </Button>
             
-            {/* Botão secundário - Responsivo */}
+            {/* Secondary CTA */}
             <button
               onClick={() => window.open('https://maps.app.goo.gl/xm4ySteQD1mssbFW7', '_blank')}
-              className="h-12 sm:h-13 md:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold w-full rounded-md transition-all duration-200 flex items-center justify-center"
+              className="group w-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-sm hover:scale-105"
               style={{
-                backgroundColor: 'transparent',
-                border: '1px solid rgba(235, 2, 45, 0.3)',
+                background: 'linear-gradient(135deg, rgba(235, 2, 45, 0.15) 0%, rgba(235, 2, 45, 0.08) 100%)',
+                border: '2px solid rgba(235, 2, 45, 0.4)',
                 color: '#eb022d'
               }}
               onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.backgroundColor = 'rgba(235, 2, 45, 0.05)';
-                (e.target as HTMLElement).style.borderColor = 'rgba(235, 2, 45, 0.5)';
+                (e.target as HTMLElement).style.background = 'linear-gradient(135deg, rgba(235, 2, 45, 0.2) 0%, rgba(235, 2, 45, 0.12) 100%)';
+                (e.target as HTMLElement).style.borderColor = 'rgba(235, 2, 45, 0.6)';
+                (e.target as HTMLElement).style.boxShadow = '0 10px 25px rgba(235, 2, 45, 0.25)';
               }}
               onMouseLeave={(e) => {
-                (e.target as HTMLElement).style.backgroundColor = 'transparent';
-                (e.target as HTMLElement).style.borderColor = 'rgba(235, 2, 45, 0.3)';
+                (e.target as HTMLElement).style.background = 'linear-gradient(135deg, rgba(235, 2, 45, 0.15) 0%, rgba(235, 2, 45, 0.08) 100%)';
+                (e.target as HTMLElement).style.borderColor = 'rgba(235, 2, 45, 0.4)';
+                (e.target as HTMLElement).style.boxShadow = 'none';
               }}
-              aria-label="Saber mais via Instagram"
             >
-              <Play size={16} className="mr-2" />
-              Localização
+              <Play size={16} className="group-hover:scale-110 transition-transform duration-300" />
+              Nossa Localização
             </button>
           </div>
           
-          {/* Social proof - Responsivo */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 text-gray-500 text-xs sm:text-sm pt-4">
-            <div className="flex items-center gap-2">
-              <div 
-                className="w-1 h-1 rounded-full"
-                style={{ backgroundColor: '#eb022d' }}
-              ></div>
-              <span>4.9/5 avaliação média</span>
+          {/* Enhanced Social Proof */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-8 justify-center">
+            <div className="flex items-center gap-2 text-gray-700 backdrop-blur-sm bg-white/60 px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+              <div className="flex items-center">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} className="text-yellow-500 fill-current" />
+                ))}
+              </div>
+              <span className="font-semibold text-sm">4.9/5</span>
+              <span className="text-gray-600 text-sm">avaliação</span>
+            </div>
+            
+            <div className="flex items-center gap-2 text-gray-700 backdrop-blur-sm bg-white/60 px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+              <Users size={14} className="text-blue-600" />
+              <span className="font-semibold text-sm">500+</span>
+              <span className="text-gray-600 text-sm">clientes satisfeitos</span>
             </div>
           </div>
           
         </div>
-        
-        {/* Imagem do celular - Responsiva */}
-        <div className="flex items-center justify-center order-2 lg:order-2 mt-8 lg:mt-0">
-          <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-md">
-            <img 
-              src="/celular.png" 
-              alt="Smartphone TIM com aplicativos e serviços" 
-              className="w-full h-auto object-contain"
-              loading="eager"
-            />
-          </div>
-        </div>
-        
       </div>
-      </div>
-    </section>
+    </WavyBackground>
   );
 }

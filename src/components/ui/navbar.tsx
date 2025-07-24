@@ -113,8 +113,8 @@ export function Navbar() {
                 className="h-8 w-auto object-contain"
               />
               <div className="text-lg font-semibold">
-                <span className="text-red-500">Santa</span>
-                <span className="text-blue-500 ml-1 font-normal hidden sm:inline">Luzia</span>
+                <span className="text-red-500 hidden sm:inline">Santa</span>
+                <span className="text-blue-500 ml-1 font-normal hidden sm:inline"> Luzia</span>
               </div>
             </a>
 

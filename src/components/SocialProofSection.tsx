@@ -85,21 +85,6 @@ export function SocialProofSection() {
       className="py-16 md:py-24 relative"
       style={{ backgroundColor: '#004794' }}
     >
-      {/* Efeitos de blur decorativos sutis */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div 
-          className="absolute top-20 right-10 w-96 h-96 rounded-full blur-3xl opacity-10"
-          style={{ backgroundColor: '#eb022d' }}
-        />
-        <div 
-          className="absolute bottom-20 left-10 w-80 h-80 rounded-full blur-3xl opacity-10"
-          style={{ backgroundColor: '#eb022d' }}
-        />
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-8"
-          style={{ backgroundColor: '#eb022d' }}
-        />
-      </div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Cabeçalho da seção */}
