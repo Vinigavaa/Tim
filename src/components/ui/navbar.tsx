@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from './button';
-import { Menu, X, Phone } from 'lucide-react';
-import { createWhatsAppHandler, WHATSAPP_MESSAGES } from '../../lib/utils';
+import { Menu, X } from 'lucide-react';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,9 +67,7 @@ export function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
-  // Handlers para WhatsApp
-  const handleWhatsAppContact = createWhatsAppHandler(WHATSAPP_MESSAGES.CONTACT_GENERAL);
-  const handlePhoneWhatsApp = createWhatsAppHandler(WHATSAPP_MESSAGES.PHONE_CONTACT);
+
 
   // Função para fechar o menu mobile
   const closeMobileMenu = () => {
@@ -124,7 +121,7 @@ export function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="px-3 py-2 text-sm text-blue-500 hover:text-blue-900 transition-colors duration-200 rounded-md"
+                  className="px-3 py-2 text-sm text-blue-500 hover:text-blue-900 transition-colors duration-300 rounded-md"
                   onClick={handleLinkClick}
                 >
                   {link.name}
@@ -132,39 +129,13 @@ export function Navbar() {
               ))}
             </nav>
 
-            {/* Botões de ação - Desktop */}
-            <div className="hidden md:flex items-center gap-3">
-              <button
-                onClick={handlePhoneWhatsApp}
-                className="p-2 text-blue-500 hover:text-blue-900 transition-colors duration-200 rounded-md"
-                aria-label="Entrar em contato via WhatsApp"
-              >
-                <Phone size={18} />
-              </button>
-              <Button 
-                size="sm"
-                onClick={handleWhatsAppContact}
-                className="btn-primary h-9 px-4 text-sm"
-                aria-label="Entrar em contato via WhatsApp"
-              >
-                Fale conosco
-              </Button>
-            </div>
-
-            {/* Botões mobile */}
-            <div className="flex md:hidden items-center gap-2">
-              <button
-                onClick={handlePhoneWhatsApp}
-                className="p-2 text-blue-500 hover:text-gray-200 transition-colors duration-200 rounded-md bg-white/10 hover:bg-white/20"
-                aria-label="Entrar em contato via WhatsApp"
-              >
-                <Phone size={18} />
-              </button>
+            {/* Botão menu mobile */}
+            <div className="md:hidden">
               <Button 
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-blue-500 hover:bg-white/20 transition-colors duration-200 bg-white/10"
+                className="text-blue-500 hover:bg-white/20 transition-colors duration-300 bg-white/10"
                 aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
               >
                 {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -210,20 +181,6 @@ export function Navbar() {
                 </a>
               ))}
             </nav>
-            
-            {/* Botão de ação no final */}
-            <div className="pt-6 px-2">
-              <Button 
-                className="w-full btn-primary h-14 text-lg font-semibold rounded-xl"
-                onClick={(e) => {
-                  closeMobileMenu();
-                  handleWhatsAppContact(e);
-                }}
-                aria-label="Entrar em contato via WhatsApp"
-              >
-                Fale conosco
-              </Button>
-            </div>
           </div>
         </div>
       )}

@@ -104,19 +104,22 @@ export function HeroSection() {
             <Button 
               size="lg"
               onClick={() => window.open('https://www.instagram.com/timsantaluzia?igsh=eXBmOWk3dmhqaTd1', '_blank')}
-              className="group relative w-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-bold text-white overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl border-0"
+              className="group relative w-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-bold text-white overflow-hidden transition-all duration-500 ease-out hover:scale-105 hover:shadow-2xl border-0 transform hover:-translate-y-1"
               style={{
                 background: 'linear-gradient(135deg, #004794 0%, #0056a8 50%, #004794 100%)',
                 backgroundSize: '200% 200%',
-                boxShadow: '0 10px 30px rgba(0, 71, 148, 0.4)'
+                boxShadow: '0 10px 30px rgba(0, 71, 148, 0.4)',
+                transition: 'all 0.5s ease-out, background-position 0.8s ease-out'
               }}
               onMouseEnter={(e) => {
                 (e.target as HTMLElement).style.backgroundPosition = '100% 0';
-                (e.target as HTMLElement).style.boxShadow = '0 15px 40px rgba(0, 71, 148, 0.5)';
+                (e.target as HTMLElement).style.boxShadow = '0 20px 50px rgba(0, 71, 148, 0.6)';
+                (e.target as HTMLElement).style.transform = 'scale(1.05) translateY(-4px)';
               }}
               onMouseLeave={(e) => {
                 (e.target as HTMLElement).style.backgroundPosition = '0% 0';
                 (e.target as HTMLElement).style.boxShadow = '0 10px 30px rgba(0, 71, 148, 0.4)';
+                (e.target as HTMLElement).style.transform = 'scale(1) translateY(0)';
               }}
             >
               <span className="relative z-10 flex items-center justify-center gap-3">
@@ -130,21 +133,24 @@ export function HeroSection() {
             {/* Secondary CTA */}
             <button
               onClick={() => window.open('https://maps.app.goo.gl/xm4ySteQD1mssbFW7', '_blank')}
-              className="group w-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 backdrop-blur-sm hover:scale-105"
+              className="group w-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold rounded-xl transition-all duration-500 ease-out flex items-center justify-center gap-3 backdrop-blur-sm hover:scale-105 transform hover:-translate-y-1"
               style={{
                 background: 'linear-gradient(135deg, rgba(235, 2, 45, 0.15) 0%, rgba(235, 2, 45, 0.08) 100%)',
                 border: '2px solid rgba(235, 2, 45, 0.4)',
-                color: '#eb022d'
+                color: '#eb022d',
+                transition: 'all 0.5s ease-out'
               }}
               onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.background = 'linear-gradient(135deg, rgba(235, 2, 45, 0.2) 0%, rgba(235, 2, 45, 0.12) 100%)';
-                (e.target as HTMLElement).style.borderColor = 'rgba(235, 2, 45, 0.6)';
-                (e.target as HTMLElement).style.boxShadow = '0 10px 25px rgba(235, 2, 45, 0.25)';
+                (e.target as HTMLElement).style.background = 'linear-gradient(135deg, rgba(235, 2, 45, 0.25) 0%, rgba(235, 2, 45, 0.15) 100%)';
+                (e.target as HTMLElement).style.borderColor = 'rgba(235, 2, 45, 0.7)';
+                (e.target as HTMLElement).style.boxShadow = '0 15px 35px rgba(235, 2, 45, 0.3)';
+                (e.target as HTMLElement).style.transform = 'scale(1.05) translateY(-4px)';
               }}
               onMouseLeave={(e) => {
                 (e.target as HTMLElement).style.background = 'linear-gradient(135deg, rgba(235, 2, 45, 0.15) 0%, rgba(235, 2, 45, 0.08) 100%)';
                 (e.target as HTMLElement).style.borderColor = 'rgba(235, 2, 45, 0.4)';
                 (e.target as HTMLElement).style.boxShadow = 'none';
+                (e.target as HTMLElement).style.transform = 'scale(1) translateY(0)';
               }}
             >
               <Play size={16} className="group-hover:scale-110 transition-transform duration-300" />

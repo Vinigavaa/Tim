@@ -159,13 +159,22 @@ export function FinalCTASection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button 
               onClick={handleTelephonyClick}
-              className="font-semibold h-12 px-8 text-lg shadow-lg"
+              className="font-semibold h-12 px-8 text-lg shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 transform"
               style={{
                 backgroundColor: '#eb022d',
-                color: 'white'
+                color: 'white',
+                transition: 'all 0.3s ease-in-out'
               }}
-              onMouseEnter={(e) => (e.target as HTMLElement).style.backgroundColor = '#c7021f'}
-              onMouseLeave={(e) => (e.target as HTMLElement).style.backgroundColor = '#eb022d'}
+              onMouseEnter={(e) => {
+                (e.target as HTMLElement).style.backgroundColor = '#c7021f';
+                (e.target as HTMLElement).style.transform = 'scale(1.05) translateY(-2px)';
+                (e.target as HTMLElement).style.boxShadow = '0 15px 30px rgba(235, 2, 45, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                (e.target as HTMLElement).style.backgroundColor = '#eb022d';
+                (e.target as HTMLElement).style.transform = 'scale(1) translateY(0)';
+                (e.target as HTMLElement).style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+              }}
               aria-label="Consultar serviços TIM via WhatsApp"
             >
               <Headphones size={18} className="mr-2" />
@@ -174,17 +183,22 @@ export function FinalCTASection() {
             
             <button
               onClick={() => window.open('tel:+5548998438888', '_self')}
-              className="font-semibold h-12 px-8 text-lg rounded-md transition-all duration-200 border-2"
+              className="font-semibold h-12 px-8 text-lg rounded-md transition-all duration-300 ease-in-out border-2 hover:shadow-lg hover:scale-105 transform"
               style={{
                 backgroundColor: 'transparent',
                 borderColor: '#004794',
-                color: '#004794'
+                color: '#004794',
+                transition: 'all 0.3s ease-in-out'
               }}
               onMouseEnter={(e) => {
-                (e.target as HTMLElement).style.backgroundColor = 'rgba(0, 71, 148, 0.05)';
+                (e.target as HTMLElement).style.backgroundColor = 'rgba(0, 71, 148, 0.1)';
+                (e.target as HTMLElement).style.transform = 'scale(1.05) translateY(-2px)';
+                (e.target as HTMLElement).style.boxShadow = '0 10px 20px rgba(0, 71, 148, 0.2)';
               }}
               onMouseLeave={(e) => {
                 (e.target as HTMLElement).style.backgroundColor = 'transparent';
+                (e.target as HTMLElement).style.transform = 'scale(1) translateY(0)';
+                (e.target as HTMLElement).style.boxShadow = 'none';
               }}
               aria-label="Ligar para TIM Santa Luzia"
             >
