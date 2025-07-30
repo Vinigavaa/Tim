@@ -25,7 +25,7 @@ export function FinalCTASection() {
 
   return (
     <section 
-      id="telephony" 
+      id="contact" 
       className="py-16 md:py-24 relative overflow-hidden"
       style={{ backgroundColor: '#ffffff' }}
     >

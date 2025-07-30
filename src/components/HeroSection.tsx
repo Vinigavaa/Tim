@@ -7,23 +7,24 @@ export function HeroSection() {
   const handleStartNow = createWhatsAppHandler(WHATSAPP_MESSAGES.START_NOW);
 
   return (
-    <WavyBackground 
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-      containerClassName="min-h-screen mt-16 sm:mt-20 md:mt-0"
-      colors={[
-        "#004794", // TIM Blue
-        "#0056a8", // TIM Blue variant
-        "#eb022d", // TIM Red
-        "#ff1744", // TIM Red variant
-        "#0066cc", // Tech Blue
-        "#004794", // Back to TIM Blue for continuity
-      ]}
-      waveWidth={60}
-      backgroundFill="rgba(255, 255, 255, 0.95)"
-      blur={3}
-      speed="slow"
-      waveOpacity={0.10}
-    >
+    <section id="hero">
+      <WavyBackground 
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        containerClassName="min-h-screen mt-16 sm:mt-20 md:mt-0"
+        colors={[
+          "#004794", // TIM Blue
+          "#0056a8", // TIM Blue variant
+          "#eb022d", // TIM Red
+          "#ff1744", // TIM Red variant
+          "#0066cc", // Tech Blue
+          "#004794", // Back to TIM Blue for continuity
+        ]}
+        waveWidth={60}
+        backgroundFill="rgba(255, 255, 255, 0.95)"
+        blur={3}
+        speed="slow"
+        waveOpacity={0.10}
+      >
       <div className="flex items-center justify-center min-h-screen py-20 relative z-10">
         <div className="w-full max-w-4xl space-y-6 sm:space-y-8 text-center">
         
@@ -180,5 +181,6 @@ export function HeroSection() {
         </div>
       </div>
     </WavyBackground>
+    </section>
   );
 }

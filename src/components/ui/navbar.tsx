@@ -49,7 +49,17 @@ export function Navbar() {
       e.preventDefault();
       const element = document.querySelector(href);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        // Adiciona um pequeno delay para garantir que o menu mobile feche antes do scroll
+        setTimeout(() => {
+          const navbarHeight = 64; // Altura da navbar
+          const elementTop = element.offsetTop;
+          const offsetPosition = elementTop - navbarHeight;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }, isMobile ? 300 : 0);
       }
     }
   };
