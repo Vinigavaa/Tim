@@ -113,7 +113,7 @@ const LocationCard = ({ store, index }) => {
       {/* Conteúdo principal */}
       <div className="px-6 pb-6 space-y-4">
         {/* Endereço */}
-        <div className="space-y-1">
+        <div className="space-y-1 mt-4 sm:mt-0">
           <div className="flex items-start gap-2">
             <Navigation size={16} className="text-gray-400 mt-1 flex-shrink-0" />
             <div className="text-sm text-gray-700 leading-relaxed">
