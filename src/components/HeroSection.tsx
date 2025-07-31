@@ -66,8 +66,8 @@ export function HeroSection() {
                 LOJA TIM
               </span>
               <span className="block text-gray-900 mt-2 drop-shadow-sm">
-                <span className="hidden sm:inline">Santa Luzia</span>
-                <span className="sm:hidden">Santa Luzia</span>
+                <span className="hidden sm:inline">Criciúma & Região</span>
+                <span className="sm:hidden">Criciúma & Região</span>
               </span>
             </h1>
             
@@ -133,7 +133,15 @@ export function HeroSection() {
             
             {/* Secondary CTA */}
             <button
-              onClick={() => window.open('https://maps.app.goo.gl/xm4ySteQD1mssbFW7', '_blank')}
+              onClick={() => {
+                const locationsSection = document.getElementById('locations');
+                if (locationsSection) {
+                  locationsSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                }
+              }}
               className="group w-full h-12 sm:h-14 px-6 sm:px-8 text-base sm:text-lg font-semibold rounded-xl transition-all duration-500 ease-out flex items-center justify-center gap-3 backdrop-blur-sm hover:scale-105 transform hover:-translate-y-1"
               style={{
                 background: 'linear-gradient(135deg, rgba(235, 2, 45, 0.15) 0%, rgba(235, 2, 45, 0.08) 100%)',
@@ -155,7 +163,7 @@ export function HeroSection() {
               }}
             >
               <Play size={16} className="group-hover:scale-110 transition-transform duration-300" />
-              Nossa Localização
+              Nossas Localizações
             </button>
           </div>
           

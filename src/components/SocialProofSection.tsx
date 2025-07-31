@@ -156,10 +156,6 @@ export function SocialProofSection() {
           <p className="text-blue-100 mb-6 text-lg">
             Faça parte da nossa família de clientes satisfeitos
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <span className="text-white font-semibold text-lg">📍 Santa Luzia - Criciuma -SC</span>
-            <span className="text-white font-semibold text-lg">📱 (48) 99843-8888 </span>
-          </div>
         </div>
       </div>
     </section>
